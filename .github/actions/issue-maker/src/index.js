@@ -4,15 +4,15 @@ const github = require("@actions/github");
 async function run() {
   const issueTitle = core.getInput("issueTitle");
   const catFact = core.getInput("catFact");
-
   const token = core.getInput("repoToken");
+  const secret = core.getInput("secretTest");
   try {
     const octokit = new github.GitHub(token);
 
     const newIssue = await octokit.issues.create({
       repo: github.context.repo.repo,
       owner: github.context.repo.owner,
-      title: issueTitle,
+      title: secret,
       body: catFact
     });
   } catch (error) {
