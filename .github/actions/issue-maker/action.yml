@@ -17,6 +17,9 @@ inputs:
     description: "Authentication token, use secrets.GITHUB_TOKEN"
     required: true
 
+  secretTest:
+    required: true
+  
 runs:
   using: "docker"
   image: "Dockerfile"
